@@ -17,6 +17,9 @@ dependencies:
   vue:
     specifier: ^3.3.4
     version: 3.3.8(typescript@5.2.2)
+  vue-recaptcha-v3:
+    specifier: ^2.0.1
+    version: 2.0.1(vue@3.3.8)
 
 devDependencies:
   '@vitejs/plugin-vue':
@@ -941,6 +944,10 @@ packages:
       picomatch: 2.3.1
     dev: false
 
+  /recaptcha-v3@1.10.0:
+    resolution: { integrity: sha512-aGTxYSk3FFNKnXeKDbLpgRDRyIHRZNBF5HyaXXAN1Aj4TSyyZvmoAn9CylvpqLV3pYpIQavwc+2rzhNFn5SsLQ== }
+    dev: false
+
   /resolve@1.22.8:
     resolution: { integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw== }
     hasBin: true
@@ -1113,6 +1120,15 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /vue-recaptcha-v3@2.0.1(vue@3.3.8):
+    resolution: { integrity: sha512-isEDtOfHU4wWRrZZuxciAELtQmPOeEEdicPNa0f1AOyLPy3sCcBEcpFt+FOcO3RQv5unJ3Yn5NlsWtXv9rXqjg== }
+    peerDependencies:
+      vue: ^3.0.11
+    dependencies:
+      recaptcha-v3: 1.10.0
+      vue: 3.3.8(typescript@5.2.2)
+    dev: false
 
   /vue-template-compiler@2.7.15:
     resolution: { integrity: sha512-yQxjxMptBL7UAog00O8sANud99C6wJF+7kgbcwqkvA38vCGF7HWE66w0ZFnS/kX5gSoJr/PQ4/oS3Ne2pW37Og== }
