@@ -1,5 +1,9 @@
 import {createApp} from 'vue'
-import './style.css'
+import {VueReCaptcha} from 'vue-recaptcha-v3'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import './assets/main.css'
+
+createApp(App)
+    .use(VueReCaptcha, {siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY})
+    .mount('#app')
