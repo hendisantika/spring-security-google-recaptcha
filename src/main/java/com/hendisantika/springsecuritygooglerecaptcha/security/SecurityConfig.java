@@ -1,9 +1,14 @@
 package com.hendisantika.springsecuritygooglerecaptcha.security;
 
 import com.hendisantika.springsecuritygooglerecaptcha.service.RecaptchaService;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.security.interfaces.RSAKey;
 
@@ -27,5 +32,12 @@ public class SecurityConfig {
 
     public SecurityConfig(RecaptchaService recaptchaService) {
         this.recaptchaService = recaptchaService;
+    }
+
+    @Bean
+    public AuthenticationManager authManager(UserDetailsService userDetailsService) {
+        var authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        return new ProviderManager(authProvider);
     }
 }
