@@ -15,7 +15,7 @@ const onSubmit = async () => {
   console.log("user:", user);
 
   // Send the token as a header to the login endpoint
-  fetch('http://localhost:8080/api/auth/token', {
+  fetch('http://localhost:8081/api/auth/token', {
     method: 'POST',
     headers: {
       'recaptcha': token,
